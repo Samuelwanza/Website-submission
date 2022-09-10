@@ -11,12 +11,12 @@ const Comment = require('../models/comment');
 // @route [POST]: insert a comment into a post
 router.post('/new', comments.insertComment);
 
-router.get("/get",auth,async(req,res)=> {
+router.get("/get",async(req,res)=> {
     try{
         const comments= await comment.find()
         res.send(comments)
         
-    }catch(err){
+    }catch(err){1
         res.status(500).json({message:err.message})
         
     }
